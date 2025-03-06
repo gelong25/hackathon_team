@@ -126,8 +126,25 @@ export default function ChatPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-start bg-cover bg-center pt-16"
-      style={{ backgroundImage: "url('/images/background1.jpg')" }}>
+    <div 
+      className="min-h-screen flex flex-col items-center justify-start bg-cover bg-center pt-16 relative"
+      style={{ 
+        position: 'relative',
+      }}
+    >
+      {/* 배경 이미지를 위한 오버레이 div */}
+      <div 
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/images/background1.jpg')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.8,  
+        }}
+      />
+      
+      {/* 기존 컨텐츠를 위한 wrapper div */}
+      <div className="relative z-10 flex flex-col items-center w-full">
       
       <h1 className="text-3xl font-bold mb-4 text-white">대화 페이지</h1>
 
@@ -163,6 +180,7 @@ export default function ChatPage() {
       )}
 
       <Footer />
+    </div>
     </div>
   );
 }
