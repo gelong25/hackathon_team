@@ -118,7 +118,7 @@ export default function ExperiencePage() {
         </div>
 
         {/* 중앙 원형 이미지 */}
-        <div className="flex flex-col items-center justify-center mt-12">
+        <div className="flex flex-col items-center justify-center" style={{ marginTop: "65px" }}>
           <div 
             style={{
               width: "400px",
