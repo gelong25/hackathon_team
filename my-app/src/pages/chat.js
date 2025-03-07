@@ -12,9 +12,16 @@ export default function ChatPage() {
   const category = searchParams.get("category");
   const difficulty = searchParams.get("difficulty");
 
+  const categoryMapping = {
+    hospital: "병원",
+    restaurant: "중국집",
+    bank: "은행"
+  };
+  const displayCategory = categoryMapping[category] || category;
+
   const MAX_RECORDS = 3; // 🔹 최대 녹음 횟수 설정
   const [messages, setMessages] = useState([
-    { role: "system", content: `안녕하세요! "${category}" 카테고리의 "${difficulty}" 난이도로 대화해요.` },
+    { role: "system", content: `안녕하세요! ${displayCategory} 시물레이션 입니다.` },
   ]);
   const [recordCount, setRecordCount] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
@@ -179,7 +186,7 @@ export default function ChatPage() {
       transform: "translateX(-50%)",
       width: "70vw", // 📌 너비 줄임
       maxWidth: "500px",
-      height: "50vh", // 📌 높이 줄임
+      height: "60vh", // 📌 높이 줄임
       backgroundColor: "white",
       borderRadius: "12px",
       boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.3)",
@@ -207,9 +214,9 @@ export default function ChatPage() {
                 padding: "12px",
                 maxWidth: "75%",
                 borderRadius: "8px",
-                fontSize: "14px",
-                backgroundColor: isSystemMessage ? "#FFD700" : isUserMessage ? "#3B82F6" : "#6B7280",
-                color: isSystemMessage ? "black" : "white",
+                fontSize: "12px",
+                backgroundColor: isSystemMessage ? "#FFD700" : isUserMessage ? "#3B82F6" : "#FFD700",
+                color: "black",
                 textAlign: isSystemMessage ? "center" : "left",
                 alignSelf: isUserMessage ? "flex-start" : "flex-end",
               }}
@@ -230,7 +237,7 @@ export default function ChatPage() {
   <div 
     style={{
       position: "absolute",
-      bottom: "20vh", // 📌 화면 하단에서 여유 공간 확보
+      bottom: "15vh", // 📌 화면 하단에서 여유 공간 확보
       left: "50%",
       transform: "translateX(-50%)",
       width: "70px",
