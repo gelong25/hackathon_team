@@ -11,7 +11,7 @@ import Title from "@/component/Title";
 // 카테고리 목록
 const categories = [
   { name: "중국집", value: "restaurant" },
-  { name: "병원 문의", value: "hospital" },
+  { name: "병원 ", value: "hospital" },
   { name: "은행", value: "bank"},
 ];
 
@@ -73,7 +73,7 @@ export default function CategorySelectPage() {
         {/* 중앙 이미지 */}
         <div 
           className={`flex flex-col items-center justify-center mt-10 transition-all duration-700 ${isPageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
-          style={{ transitionDelay: "0.4s" }}
+          style={{ transitionDelay: "0.4s" }}s
         >
           <div 
             className="w-64 h-64 md:w-80 md:h-80 bg-white/80 rounded-full flex justify-center items-center shadow-xl hover:shadow-2xl transition-transform duration-300 hover:scale-105"
